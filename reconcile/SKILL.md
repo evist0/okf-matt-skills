@@ -14,7 +14,7 @@ This is the *writing* discipline of the **build** phase — the mirror of `/doma
 
 Reconcile against the diff, never the whole bundle. Fixed point is the one `/vet` used, or one the user supplies: `git diff <fixed-point>...HEAD`.
 
-Durable knowledge is everything under `knowledge/` — `concepts/`, `architecture/`, `decisions/`, `prd/`, `processes/`, `glossary/`. Touch a concept only when the diff gives you a reason to.
+Durable knowledge is everything under `knowledge/` — the canonical categories `glossary/`, `adr/`, and `prd/`, plus any project-specific concept category registered in `knowledge/index.md`. Touch a concept only when the diff gives you a reason to.
 
 ## Process
 
@@ -44,7 +44,7 @@ When two classes are live for one divergence and you cannot tell which, **put it
 
 - **Referential** → fix the reference inline. Batch every referential fix and report them as one summary.
 - **Stale description** → show the rewritten prose for that concept, one concept at a time; write on the user's confirmation.
-- **Unrecorded decision** → propose an ADR or concept, *sparingly* — only when the decision clears all three of hard-to-reverse, non-obvious, consequential. Write on confirmation. Most changes clear none and record nothing.
+- **Unrecorded decision** → propose an ADR or concept, *sparingly* — only when the decision clears all three of hard-to-reverse, non-obvious, consequential. Write on confirmation. Most changes clear none and record nothing. If the unrecorded ground is a new *kind* of entity that fits no existing category (`glossary`, `adr`, `prd`, or a registered one), the extensibility rule applies: propose a new category, get the user's sanction, and register it in `knowledge/index.md` before writing. Default to the existing categories.
 - **Violated decision** → leave the recorded decision exactly as written and surface it as a finding. A live contradiction with an accepted decision is a signal to fix the code or reopen the ADR deliberately — never to quietly edit the record to match the breach.
 
 ### 4. Log

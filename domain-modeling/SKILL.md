@@ -29,6 +29,18 @@ For multiple bounded contexts, each context is a subdirectory inside the one bun
 
 Create files lazily — only when you have something to write. If no `knowledge/glossary/` exists, create it when the first term is resolved. If no `knowledge/adr/` exists, create it when the first ADR is needed. Whenever knowledge changes, update the concept AND append to `knowledge/log.md`.
 
+### Extending the bundle (new concept categories)
+
+`glossary/` and `adr/` are the two categories every bundle has; `prd/` (written by `/to-prd`) is the third canonical one. But OKF is an **open** format — `type` is a free field and the bundle is not limited to a fixed set of folders. When you meet a durable domain entity that genuinely fits none of them — a recurring *kind* of thing the project needs recorded in its own right — a new concept category is legitimate.
+
+Don't spin one up silently. When you judge a new category is warranted:
+
+1. **Propose it** — name the category, say what kind of entity it holds and why glossary/adr/prd don't fit.
+2. **Get the user's sanction** before creating the directory.
+3. **Register it** in `knowledge/index.md` (and give it an `index.md` like every other category) so the bundle map stays honest.
+
+Default to the existing three. A new category is the exception, not the reflex.
+
 ## During the session
 
 ### Challenge against the glossary

@@ -155,6 +155,20 @@ The block:
 ### Domain docs
 
 [one-line summary of layout — "single-context" or "multi-context"]. See `knowledge/_agents/domain.md`.
+
+### Repo notes
+
+Operational gotchas and local conventions for this repo — consult `knowledge/_agents/notes/index.md` before assuming. When you learn a durable repo/tooling insight worth sharing with future agents, follow the notes protocol in `knowledge/_agents/index.md`.
+```
+
+**Also add the OKF primer block** to the same file. It grounds every agent in what the `knowledge/` bundle is — the base model does not know OKF a priori. Write it as a marked block so re-runs update it in place without touching anything else. If the `<!-- okf-primer -->` markers already exist, replace what's between them; otherwise add the block:
+
+```markdown
+<!-- okf-primer:start -->
+## Knowledge bundle (OKF)
+
+This repo keeps durable knowledge in an [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) bundle at `knowledge/`. Each concept is a markdown file carrying a `type` frontmatter field; reserved files (`index.md`, `log.md`) carry no frontmatter. The canonical categories are `glossary/` (domain terms), `adr/` (decisions), and `prd/` (product requirements) — but OKF is **open**: when a durable entity fits none of them, a new concept category is legitimate (propose it, get sign-off, register it in `knowledge/index.md`). The `_agents/` subdirectory is reserved agent-operational config, never a domain context.
+<!-- okf-primer:end -->
 ```
 
 Create the `knowledge/_agents/` directory and write the config files using the seed
