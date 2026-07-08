@@ -9,7 +9,7 @@ instead of ad-hoc docs.
 
 ## What's different from upstream
 
-- **Ported to OKF** — domain modeling, PRDs, and the knowledge bundle all follow the OKF spec.
+- **Ported to OKF** — domain modeling, specs, and the knowledge bundle all follow the OKF spec.
 - **Added `reconcile`** — a closeout step that brings the OKF bundle back into
   agreement with the code that actually shipped, so knowledge doesn't drift between sessions.
 - **Renamed** the skills you type most — shorter, and with no personal-name references.

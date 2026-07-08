@@ -31,7 +31,7 @@ Create files lazily — only when you have something to write. If no `knowledge/
 
 ### Extending the bundle (new concept categories)
 
-`glossary/` and `adr/` are the two categories every bundle has; `prd/` (written by `/to-prd`) is the third canonical one. But OKF is an **open** format — `type` is a free field and the bundle is not limited to a fixed set of folders. When you meet a durable domain entity that genuinely fits none of them — a recurring *kind* of thing the project needs recorded in its own right — a new concept category is legitimate.
+`glossary/` and `adr/` are the two categories every bundle has; `spec/` (written by `/to-spec`) is the third canonical one. But OKF is an **open** format — `type` is a free field and the bundle is not limited to a fixed set of folders. When you meet a durable domain entity that genuinely fits none of them — a recurring *kind* of thing the project needs recorded in its own right — a new concept category is legitimate.
 
 Don't spin one up silently. When you judge a new category is warranted:
 

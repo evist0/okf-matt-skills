@@ -13,7 +13,7 @@ This is the *writing* discipline of the **build** phase — the mirror of `/doma
 
 Reconcile against the diff, never the whole bundle. Fixed point is the one `/vet` used, or one the user supplies: `git diff <fixed-point>...HEAD`.
 
-Durable knowledge is everything under `knowledge/` — the canonical categories `glossary/`, `adr/`, and `prd/`, plus any project-specific concept category registered in `knowledge/index.md`. Touch a concept only when the diff gives you a reason to.
+Durable knowledge is everything under `knowledge/` — the canonical categories `glossary/`, `adr/`, and `spec/`, plus any project-specific concept category registered in `knowledge/index.md`. Touch a concept only when the diff gives you a reason to.
 
 ## Process
 
@@ -23,7 +23,7 @@ Reconcile runs in two phases: a **sub-agent** analyses the diff and applies the 
 
 First write a **build-rationale brief** for the sub-agent — this is what keeps its classification from being blind. Keep it to a few hundred words:
 
-- **Pointers, not copies** — the PRD/issue reference and the commit list (`git log <fixed-point>..HEAD --oneline`). The sub-agent reads these itself; don't paste them.
+- **Pointers, not copies** — the spec/issue reference and the commit list (`git log <fixed-point>..HEAD --oneline`). The sub-agent reads these itself; don't paste them.
 - **The unwritten "why"** — a short synthesis of the non-obvious decisions made while implementing: the "chose X over Y because…" that lives in no file. This is the only input the sub-agent cannot obtain on its own, and the thing its judgement of unrecorded/violated decisions depends on.
 
 Then spawn one `general-purpose` sub-agent, passing it: the diff command `git diff <fixed-point>...HEAD`, the brief, and the **Classes** table below. Its brief:
@@ -52,7 +52,7 @@ Act on each class:
 
 - **Referential** → fixed in Phase 1 by the sub-agent (above).
 - **Stale description** → Phase 2: show the rewritten prose for that concept, one concept at a time; write on the user's confirmation.
-- **Unrecorded decision** → Phase 2: propose an ADR or concept, *sparingly* — only when the decision clears all three of hard-to-reverse, non-obvious, consequential. Write on confirmation. Most changes clear none and record nothing. If the unrecorded ground is a new *kind* of entity that fits no existing category (`glossary`, `adr`, `prd`, or a registered one), the extensibility rule applies: propose a new category, get the user's sanction, and register it in `knowledge/index.md` before writing. Default to the existing categories.
+- **Unrecorded decision** → Phase 2: propose an ADR or concept, *sparingly* — only when the decision clears all three of hard-to-reverse, non-obvious, consequential. Write on confirmation. Most changes clear none and record nothing. If the unrecorded ground is a new *kind* of entity that fits no existing category (`glossary`, `adr`, `spec`, or a registered one), the extensibility rule applies: propose a new category, get the user's sanction, and register it in `knowledge/index.md` before writing. Default to the existing categories.
 - **Violated decision** → Phase 2: leave the recorded decision exactly as written and surface it as a finding. A live contradiction with an accepted decision is a signal to fix the code or reopen the ADR deliberately — never to quietly edit the record to match the breach.
 
 ### Phase 2 — Confirm & write (main context)
