@@ -39,7 +39,14 @@ git clone https://github.com/evist0/okf-matt-skills.git
 cd okf-matt-skills
 ./install.sh            # symlink every skill into ~/.claude/skills (edits stay live)
 # ./install.sh --copy   # copy instead, if you don't want symlinks
+# ./install.sh --yes    # skip the prune confirmation (for CI / automation)
 ```
+
+Re-run `./install.sh` any time you add, rename, or remove a skill folder — it links every
+current skill and, in symlink mode, cleans up links left behind by renamed or deleted skills.
+It only ever removes links that point back into this repo, so any skills you've linked in from
+elsewhere are left untouched. It asks before deleting; pass `--yes` (or run it where there's no
+terminal, then re-run with `--yes`) to prune non-interactively.
 
 Browse the folders in this repo to see what's on offer, or once installed just ask `/which-skill`
 and it will route you to the right one.
