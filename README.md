@@ -1,5 +1,7 @@
 # okf-matt-skills
 
+[![OKF BundleDex](https://bundledex.net/static-badge.svg)](https://bundledex.net)
+
 Agent skills for [Claude Code](https://claude.com/claude-code), reworked around the
 [Open Knowledge Format (OKF)](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md).
 
